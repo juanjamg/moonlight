@@ -3,29 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Tienda de Videojuegos</title>
+    <title>Login | Moonlight Geek</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { background-color: #343a40; } /* Fondo oscuro */
-        .login-container {
-            max-width: 400px;
-            margin-top: 100px;
-            padding: 30px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/estilos.css">
 </head>
-<body>
+<body class="login-body">
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center w-100 m-0">
             <div class="login-container">
-                <h2 class="text-center mb-4 text-primary">🎮 Acceso al Sistema</h2>
+                <h2 class="text-center mb-4 login-title">🎮 ACCESO AL SISTEMA</h2>
                 
                 <?php if (isset($error_message) && $error_message): ?>
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-neon-danger text-center" role="alert">
                         <?php echo htmlspecialchars($error_message); ?>
                     </div>
                 <?php endif; ?>
@@ -34,18 +25,19 @@
                     
                     <div class="mb-3">
                         <label for="nombre_usuario" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" required>
+                        <input type="text" class="form-control form-control-neon" id="nombre_usuario" name="nombre_usuario" required>
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label for="password_plana" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password_plana" name="password_plana" required>
+                        <input type="password" class="form-control form-control-neon" id="password_plana" name="password_plana" required>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Ingresar</button>
+                    <button type="submit" class="btn btn-neon-purple w-100 mt-2">Ingresar</button>
                 </form>
             </div>
         </div>
     </div>
+
 </body>
 </html>

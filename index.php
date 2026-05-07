@@ -11,18 +11,12 @@ session_start();
 
 // Modelos Base
 require_once 'app/models/conexion.php'; 
-require_once 'app/models/ProductoModel.php';
 require_once 'app/models/ClienteModel.php';
-require_once 'app/models/VentaModel.php';
-require_once 'app/models/ReporteModel.php';
 
 // Controladores
 require_once 'app/controllers/UsuarioController.php';
 require_once 'app/controllers/DashboardController.php'; 
-require_once 'app/controllers/InventarioController.php'; 
 require_once 'app/controllers/ClienteController.php';
-require_once 'app/controllers/VentaController.php';
-require_once 'app/controllers/ReporteController.php'; // Controlador de Reportes
 
 // ----------------------------------------------------
 // 2. OBTENER EL CONTROLADOR Y LA ACCIÓN SOLICITADA

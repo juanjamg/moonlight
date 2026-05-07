@@ -1,72 +1,226 @@
-/* /public/css/estilos.css - TEMÁTICA NEÓN PÚRPURA Y AZUL FINAL */
+/* =========================================
+   1. VARIABLES GLOBALES Y FUENTES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap');
 
-/* 1. CONFIGURACIÓN BASE Y FONDO OSCURO */
+:root {
+    --bg-black: #0b0c10;
+    --text-light: #e0e0e0;
+    --accent-purple: #9F00FF;
+    --accent-magenta: #FF00E5;
+    --accent-cyan: #00E5FF;
+    --accent-yellow: #FFD700;
+    --accent-red: #FF003C;
+}
+
+/* =========================================
+   2. ESTILOS BASE
+   ========================================= */
 body {
-    background-color: #1a1a1a; /* Negro muy oscuro */
-    color: #e0e0e0; /* Texto claro general */
+    background-color: var(--bg-black);
+    color: var(--text-light);
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* 2. LAYOUT: HEADER (ENCABEZADO) */
-.app-header {
-    background-color: black; /* Negro sólido */
-    color: white;
-    padding: 10px 0;
-    /* Sombra púrpura para dar un efecto neón al borde */
-    box-shadow: 0 0 10px rgba(147, 51, 234, 0.6); 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
 }
 
-/* 3. COLORES NEÓN PERSONALIZADOS (Bootstrap Overrides) */
-
-/* Color Principal (btn-primary, bg-primary): Púrpura/Lila Fuerte */
-.btn-primary, .bg-primary {
-    background-color: #9333ea !important; 
-    border-color: #9333ea !important;
-    color: white !important;
-}
-/* Color Secundario (btn-info, bg-info): Azul Cian Neón */
-.btn-info, .bg-info {
-    background-color: #00FFFF !important; 
-    border-color: #00FFFF !important;
-    color: #000 !important; /* Texto negro para contraste máximo */
-}
-/* Color Éxito (btn-success, bg-success): Verde de contraste para la venta */
-.btn-success, .bg-success {
-    background-color: #15803d !important; 
-    border-color: #15803d !important;
-    color: white !important;
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* 4. AJUSTES DE TABLAS Y TARJETAS (Contraste mejorado y visibilidad) */
-.card, .table {
-    background-color: #242424; /* Fondo de elementos gris oscuro */
-    color: #e0e0e0; /* Texto base claro */
-    border-color: #444444;
+/* =========================================
+   3. ENCABEZADO (HEADER)
+   ========================================= */
+.header-moonlight {
+    background: rgba(11, 12, 16, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid var(--accent-magenta);
+    box-shadow: 0 4px 15px rgba(255, 0, 229, 0.2);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* === SOLUCIÓN DE VISIBILIDAD DE TEXTO Y BORDES === */
-.table th, 
-.table td, 
-.table-striped > tbody > tr > * { 
-    color: #e0e0e0 !important; /* Forzar texto blanco en celdas y encabezados */
-    border-color: #555555 !important; /* Borde visible para separar las filas */
-    border-bottom-width: 1px;
+.header-logo-img {
+    width: 45px;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
-/* Regla para el encabezado de la tabla (TH) */
-.table thead th {
-    background-color: #383838 !important; 
-    border-bottom: 2px solid #555555 !important; /* Línea más gruesa debajo de la cabecera */
+.header-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.header-title span {
+    color: var(--accent-magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 229, 0.5);
 }
 
-/* Ajustes de Filas Rayadas (Alternando tonos de gris oscuro para el striped) */
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-    background-color: #2e2e2e; 
+.header-user-text {
+    font-size: 1.1rem;
+    color: #b3b3b3;
 }
-.table-striped > tbody > tr:nth-of-type(even) > * {
-    background-color: #383838; 
+.header-user-name {
+    color: var(--accent-cyan);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.4);
 }
 
-/* Ajuste para que el texto de las alertas de éxito/duplicado sea legible */
-.alert-success, .alert-danger {
-    color: white !important; 
+.badge-neon-role {
+    background-color: transparent !important;
+    border: 1px solid var(--accent-yellow);
+    color: var(--accent-yellow) !important;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4) inset, 0 0 8px rgba(255, 215, 0, 0.3);
+    border-radius: 50px;
+    padding: 6px 15px;
+    font-weight: 600;
+}
+
+/* =========================================
+   4. BARRA LATERAL (SIDEBAR)
+   ========================================= */
+.sidebar-moonlight {
+    background-color: #030303;
+    border-right: 1px solid rgba(159, 0, 255, 0.4);
+    box-shadow: 5px 0 15px rgba(159, 0, 255, 0.1);
+}
+
+.sidebar-logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+    letter-spacing: 2px;
+}
+.sidebar-logo-text span {
+    color: var(--accent-magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 229, 0.6);
+}
+
+.sidebar-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+    box-shadow: 0 0 5px rgba(159, 0, 255, 0.8);
+    margin: 20px 0;
+}
+
+.btn-sidebar-neon {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    color: #B0B0B0;
+    border: 1px solid transparent;
+}
+
+.btn-sidebar-cyan:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(0, 229, 255, 0.05); box-shadow: 0 0 10px rgba(0, 229, 255, 0.3) inset, 0 0 5px rgba(0, 229, 255, 0.3); }
+.btn-sidebar-purple:hover { border-color: var(--accent-purple); color: #E0E0E0; background: rgba(159, 0, 255, 0.2); box-shadow: 0 0 10px rgba(159, 0, 255, 0.4) inset, 0 0 5px rgba(159, 0, 255, 0.4); }
+.btn-sidebar-magenta:hover { border-color: var(--accent-magenta); color: var(--accent-magenta); background: rgba(255, 0, 229, 0.05); box-shadow: 0 0 10px rgba(255, 0, 229, 0.3) inset, 0 0 5px rgba(255, 0, 229, 0.3); }
+.btn-sidebar-logout { border: 1px solid var(--accent-red); color: var(--accent-red); background: rgba(255, 51, 51, 0.05); }
+.btn-sidebar-logout:hover { background: var(--accent-red); color: #000; box-shadow: 0 0 15px rgba(255, 51, 51, 0.8); }
+
+/* =========================================
+   5. BOTONES GLOBALES (TIPO PÍLDORA)
+   ========================================= */
+.btn-neon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-neon-blue { padding: 10px 24px; font-size: 1.1rem; border: 2px solid var(--accent-cyan); color: var(--accent-cyan); box-shadow: 0 0 10px rgba(0, 229, 255, 0.4) inset, 0 0 15px rgba(0, 229, 255, 0.3); }
+.btn-neon-blue:hover { background-color: var(--accent-cyan); color: #000; box-shadow: 0 0 20px var(--accent-cyan), 0 0 10px rgba(255,255,255,0.5) inset; }
+
+.btn-neon-yellow { padding: 6px 16px; font-size: 0.9rem; border: 2px solid var(--accent-yellow); color: var(--accent-yellow); box-shadow: 0 0 8px rgba(255, 215, 0, 0.4) inset, 0 0 10px rgba(255, 215, 0, 0.3); margin-right: 5px; }
+.btn-neon-yellow:hover { background-color: var(--accent-yellow); color: #000; box-shadow: 0 0 15px var(--accent-yellow); }
+
+.btn-neon-pink { padding: 6px 16px; font-size: 0.9rem; border: 2px solid var(--accent-magenta); color: var(--accent-magenta); box-shadow: 0 0 8px rgba(255, 0, 229, 0.4) inset, 0 0 10px rgba(255, 0, 229, 0.3); }
+.btn-neon-pink:hover { background-color: var(--accent-magenta); color: #FFF; box-shadow: 0 0 15px var(--accent-magenta); }
+
+.btn-neon-purple { padding: 12px; font-family: 'Orbitron', sans-serif; text-transform: uppercase; border: 2px solid var(--accent-purple); color: var(--accent-purple); box-shadow: 0 0 10px rgba(159, 0, 255, 0.3) inset, 0 0 10px rgba(159, 0, 255, 0.2); }
+.btn-neon-purple:hover { background-color: var(--accent-purple); color: #fff; box-shadow: 0 0 20px var(--accent-purple), 0 0 10px rgba(255,255,255,0.3) inset; }
+
+/* =========================================
+   6. TABLAS, INPUTS Y ALERTAS
+   ========================================= */
+.table-dark-custom {
+    color: var(--text-light);
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+.table-dark-custom th { color: #8A5BB2; font-family: 'Orbitron', sans-serif; border-bottom: 1px solid rgba(159, 0, 255, 0.5); text-transform: uppercase; }
+.table-dark-custom td { background-color: rgba(20, 20, 25, 0.8); color: #FFFFFF !important; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: middle; }
+.table-dark-custom tr:hover td { background-color: rgba(159, 0, 255, 0.1); }
+
+.form-control-neon { background-color: rgba(0, 0, 0, 0.6); border: 1px solid #8A5BB2; color: #ffffff; border-radius: 8px; padding: 12px; transition: all 0.3s ease; }
+.form-control-neon:focus { background-color: rgba(0, 0, 0, 0.9); border-color: var(--accent-cyan); color: #ffffff; box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); outline: none; }
+
+.alert-neon-danger { background-color: rgba(255, 0, 60, 0.1); border: 1px solid var(--accent-red); color: var(--accent-red); text-shadow: 0 0 5px rgba(255, 0, 60, 0.5); }
+
+/* =========================================
+   7. PANTALLA DE LOGIN
+   ========================================= */
+.login-body {
+    background-image: radial-gradient(circle at center, #1a1a24 0%, #000000 100%);
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.login-container {
+    width: 100%; max-width: 400px; padding: 40px 30px;
+    background: rgba(20, 20, 25, 0.85); backdrop-filter: blur(10px);
+    border: 1px solid rgba(159, 0, 255, 0.4); border-radius: 15px;
+    box-shadow: 0 0 30px rgba(159, 0, 255, 0.15), 0 0 10px rgba(0, 229, 255, 0.1);
+}
+.login-title { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); font-size: 1.6rem; }
+
+/* =========================================
+   8. MODO CLARO (TOGGLE)
+   ========================================= */
+.btn-theme-toggle {
+    position: fixed; bottom: 20px; right: 20px; z-index: 9999;
+    background: rgba(20, 20, 25, 0.8); backdrop-filter: blur(5px);
+    border: 2px solid var(--accent-cyan); color: var(--accent-cyan);
+    border-radius: 50px; padding: 10px 20px; font-family: 'Orbitron', sans-serif;
+    cursor: pointer; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+.btn-theme-toggle:hover { background: var(--accent-cyan); color: #000; }
+
+body.light-mode { background-color: #f4f4f9; background-image: none; color: #333333; }
+body.light-mode .login-container, body.light-mode .main-content, body.light-mode .sidebar-moonlight { background: #ffffff; border: 1px solid #cccccc; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+body.light-mode .login-title, body.light-mode h1, body.light-mode .header-title { color: var(--accent-purple); text-shadow: none; -webkit-text-stroke: 0px; }
+body.light-mode .form-control-neon { background-color: #ffffff; border: 1px solid var(--accent-purple); color: #333333; }
+body.light-mode .form-control-neon:focus { color: #000000; box-shadow: 0 0 8px rgba(159, 0, 255, 0.3); }
+body.light-mode .table-dark-custom td { background-color: #ffffff; color: #333333 !important; border-bottom: 1px solid #eeeeee; }
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .login-container { padding: 30px 20px; border-radius: 12px; }
+    .login-title { font-size: 1.3rem; }
 }

@@ -5,8 +5,10 @@ $baseUrl = 'index.php?controller=';
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard | Tienda de Videojuegos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Moonlight Games and Geek</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <link href="public/css/estilos.css" rel="stylesheet"> 
 </head>
 <body>
@@ -14,18 +16,18 @@ $baseUrl = 'index.php?controller=';
 
     <div class="main-content"> 
         
-        <div class="alert alert-success mt-4">
-            ¡El inicio de sesión y la seguridad funcionan! Ya puedes acceder a la información.
+        <div class="alert alert-neon-success mt-4">
+            ✨ ¡El inicio de sesión y la seguridad funcionan! Ya puedes acceder a la información.
         </div>
         
-        <h3 class="mt-4">Módulos Principales</h3>
+        <h3 class="mt-5 neon-title">Módulos Principales</h3>
         
-        <div class="d-flex flex-wrap gap-3">
-            <a href="index.php?controller=Inventario&action=listar" class="btn btn-info btn-lg">📦 Gestión de Inventario</a>
-            <a href="index.php?controller=Cliente&action=listar" class="btn btn-primary btn-lg">👤 Gestión de Clientes</a>
-            <a href="index.php?controller=Venta&action=pos" class="btn btn-success btn-lg">💰 Punto de Venta (POS)</a>
-            <a href="index.php?controller=Reporte&action=index" class="btn btn-warning btn-lg">📊 Reportes y Análisis</a>
-            <a href="<?php echo $baseUrl; ?>Usuario&action=logout" class="btn btn-warning btn-lg">🚫 Cerrar Sesión</a>
+        <div class="btn-neon">
+            <a href="index.php?controller=Inventario&action=listar" class="btn-neon-blue">📦 Gestión de Inventario</a>
+            <a href="index.php?controller=Cliente&action=listar" class="btn-neon-purple">👤 Gestión de Clientes</a>
+            <a href="index.php?controller=Venta&action=pos" class="btn-neon-pink">💰 Punto de Venta (POS)</a>
+            <a href="index.php?controller=Reporte&action=index" class="btn-neon-yellow">📊 Reportes y Análisis</a>
+            <a href="<?php echo $baseUrl; ?>Usuario&action=logout" class="btn-neon-yellow">🚫 Cerrar Sesión</a>
         </div>
     </div> 
 </body>
