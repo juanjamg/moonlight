@@ -1,0 +1,72 @@
+/* /public/css/estilos.css - TEMÁTICA NEÓN PÚRPURA Y AZUL FINAL */
+
+/* 1. CONFIGURACIÓN BASE Y FONDO OSCURO */
+body {
+    background-color: #1a1a1a; /* Negro muy oscuro */
+    color: #e0e0e0; /* Texto claro general */
+}
+
+/* 2. LAYOUT: HEADER (ENCABEZADO) */
+.app-header {
+    background-color: black; /* Negro sólido */
+    color: white;
+    padding: 10px 0;
+    /* Sombra púrpura para dar un efecto neón al borde */
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.6); 
+}
+
+/* 3. COLORES NEÓN PERSONALIZADOS (Bootstrap Overrides) */
+
+/* Color Principal (btn-primary, bg-primary): Púrpura/Lila Fuerte */
+.btn-primary, .bg-primary {
+    background-color: #9333ea !important; 
+    border-color: #9333ea !important;
+    color: white !important;
+}
+/* Color Secundario (btn-info, bg-info): Azul Cian Neón */
+.btn-info, .bg-info {
+    background-color: #00FFFF !important; 
+    border-color: #00FFFF !important;
+    color: #000 !important; /* Texto negro para contraste máximo */
+}
+/* Color Éxito (btn-success, bg-success): Verde de contraste para la venta */
+.btn-success, .bg-success {
+    background-color: #15803d !important; 
+    border-color: #15803d !important;
+    color: white !important;
+}
+
+/* 4. AJUSTES DE TABLAS Y TARJETAS (Contraste mejorado y visibilidad) */
+.card, .table {
+    background-color: #242424; /* Fondo de elementos gris oscuro */
+    color: #e0e0e0; /* Texto base claro */
+    border-color: #444444;
+}
+
+/* === SOLUCIÓN DE VISIBILIDAD DE TEXTO Y BORDES === */
+.table th, 
+.table td, 
+.table-striped > tbody > tr > * { 
+    color: #e0e0e0 !important; /* Forzar texto blanco en celdas y encabezados */
+    border-color: #555555 !important; /* Borde visible para separar las filas */
+    border-bottom-width: 1px;
+}
+
+/* Regla para el encabezado de la tabla (TH) */
+.table thead th {
+    background-color: #383838 !important; 
+    border-bottom: 2px solid #555555 !important; /* Línea más gruesa debajo de la cabecera */
+}
+
+/* Ajustes de Filas Rayadas (Alternando tonos de gris oscuro para el striped) */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #2e2e2e; 
+}
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: #383838; 
+}
+
+/* Ajuste para que el texto de las alertas de éxito/duplicado sea legible */
+.alert-success, .alert-danger {
+    color: white !important; 
+}
