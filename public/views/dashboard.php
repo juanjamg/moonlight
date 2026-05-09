@@ -1,11 +1,7 @@
-<?php
-$baseUrl = 'index.php?controller=';
-?>
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard | Tienda de Videojuegos</title>
+    <title>Dashboard | Moonlight Geek</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="public/css/estilos.css">
 </head>
@@ -21,11 +17,11 @@ $baseUrl = 'index.php?controller=';
         <h3 class="mt-5 neon-title">Módulos Principales</h3>
         
         <div class="d-flex flex-wrap gap-4 mt-4">
-            <a href="index.php?controller=Inventario&action=listar" class="btn-neon btn-cyan">📦 Gestión de Inventario</a>
-            <a href="index.php?controller=Cliente&action=listar" class="btn-neon btn-purple">👤 Gestión de Clientes</a>
-            <a href="index.php?controller=Venta&action=pos" class="btn-neon btn-magenta">💰 Punto de Venta (POS)</a>
-            <a href="index.php?controller=Reporte&action=index" class="btn-neon btn-cyan">📊 Reportes y Análisis</a>
-            <a href="<?php echo $baseUrl; ?>Usuario&action=logout" class="btn-neon btn-danger-neon">🚫 Cerrar Sesión</a>
+            <a href="index.php?controller=Inventario&action=listar" class="btn-neon btn-neon-blue">📦 Gestión de Inventario</a>
+            <a href="index.php?controller=Cliente&action=listar" class="btn-neon btn-neon-purple">👤 Gestión de Clientes</a>
+            <a href="index.php?controller=Venta&action=pos" class="btn-neon btn-neon-pink">💰 Punto de Venta (POS)</a>
+            <a href="index.php?controller=Reporte&action=index" class="btn-neon btn-neon-blue">📊 Reportes y Análisis</a>
+            <a href="<?php echo $baseUrl; ?>Usuario&action=logout" class="btn-neon btn-neon-red">🚫 Cerrar Sesión</a>
         </div>
     </div> 
 </body>
