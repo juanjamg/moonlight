@@ -41,11 +41,13 @@ $baseUrl = 'index.php?controller=';
                 💰 Punto de Venta
             </a>
         </li>
+        <?php if ($_SESSION['rol'] !== 'Vendedor'): ?>
         <li class="nav-item">
             <a class="btn-sidebar-neon btn-sidebar-cyan text-start w-100" href="<?php echo $baseUrl; ?>Reporte&action=index">
                 📊 Reportes
             </a>
         </li>
+        <?php endif; ?>
     </ul>
 
     <hr class="sidebar-divider" style="position: absolute; bottom: 70px; width: calc(100% - 32px);">

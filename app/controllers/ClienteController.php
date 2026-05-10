@@ -8,8 +8,11 @@ class ClienteController {
     
     // Función que muestra la tabla con todos los clientes
     public function listar() {
-        // Control de Acceso: Solo el Admin debe tener acceso total a la gestión
-        if ($_SESSION['rol'] !== 'Admin') {
+        if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+        }
+
+        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }
@@ -23,7 +26,7 @@ class ClienteController {
 
     // Función para mostrar el formulario de creación o edición
     public function mostrarFormulario() {
-        if ($_SESSION['rol'] !== 'Admin') {
+        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }

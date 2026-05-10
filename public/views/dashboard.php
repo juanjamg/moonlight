@@ -1,3 +1,6 @@
+<?php
+$baseUrl = 'index.php?controller=';
+?>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,12 +18,14 @@
         </div>
         
         <h3 class="mt-5 neon-title">Módulos Principales</h3>
-        
+
         <div class="d-flex flex-wrap gap-4 mt-4">
             <a href="index.php?controller=Inventario&action=listar" class="btn-neon btn-neon-blue">📦 Gestión de Inventario</a>
             <a href="index.php?controller=Cliente&action=listar" class="btn-neon btn-neon-purple">👤 Gestión de Clientes</a>
             <a href="index.php?controller=Venta&action=pos" class="btn-neon btn-neon-pink">💰 Punto de Venta (POS)</a>
-            <a href="index.php?controller=Reporte&action=index" class="btn-neon btn-neon-blue">📊 Reportes y Análisis</a>
+            <?php if ($_SESSION['rol'] !== 'Vendedor'): ?>
+                <a href="index.php?controller=Reporte&action=index" class="btn-neon btn-neon-blue">📊 Reportes y Análisis</a>
+            <?php endif; ?>
             <a href="<?php echo $baseUrl; ?>Usuario&action=logout" class="btn-neon btn-neon-red">🚫 Cerrar Sesión</a>
         </div>
     </div> 
