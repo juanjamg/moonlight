@@ -257,3 +257,34 @@ body.light-mode .table-dark-custom td { background-color: #ffffff; color: #33333
     color: #fff;
     box-shadow: 0 0 20px var(--accent-red);
 }
+
+/* Ajuste específico para centrar y dar estilo de tarjeta a este formulario */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-card {
+    background: rgba(20, 20, 25, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 229, 255, 0.3); /* Borde cyan tenue */
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px; /* Tamaño ideal para que no se estire demasiado */
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+/* Botón cancelar personalizado estilo neón apagado */
+.btn-neon-cancel {
+    border: 2px solid #6c757d;
+    color: #b3b3b3;
+}
+
+.btn-neon-cancel:hover {
+    background: #6c757d;
+    color: #fff;
+    box-shadow: 0 0 15px #6c757d;
+}

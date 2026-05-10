@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2026 a las 03:40:08
+-- Tiempo de generación: 10-05-2026 a las 06:04:01
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -138,7 +138,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_completo`, `nombre_usuario`, `password_hash`, `rol`, `fecha_creacion`) VALUES
 (3, 'Administrador Principal', 'juanja', '$2y$10$yld04rMgbRn9LP8WOeanQ.svmhz8AbKCYXMK3eGviYo22VMrkxwYe', 'Admin', '2025-11-18 20:41:31'),
-(4, 'Pepito Perez ', 'pepe', '$2y$10$yld04rMgbRn9LP8WOeanQ.svmhz8AbKCYXMK3eGviYo22VMrkxwYe', 'Vendedor', '2026-05-09 21:45:26');
+(4, 'Yael Miranda Delgado', 'yael', '$2y$10$m209j9fvQQCQqdIJjPJ2luh6tTuzSkP9x1aPYC670uHgMRlGDtXCS', 'Vendedor', '2026-05-09 21:45:26');
 
 -- --------------------------------------------------------
 
