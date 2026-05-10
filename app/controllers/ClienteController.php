@@ -50,8 +50,20 @@ class ClienteController {
     // 1. Sanear y obtener los datos
     $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-    $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    // En tu ClienteController.php al recibir el formulario:
+    // Filtramos para conservar únicamente los caracteres numéricos
+    $telefono = filter_var($_POST['telefono'] ?? '', FILTER_SANITIZE_NUMBER_INT);
+    if (strlen($telefono) !== 10) {
+        header("Location: index.php?controller=Cliente&action=mostrarFormulario&error=telefono_invalido");
+        exit();
+        }
+    
+    $email = $_POST['email'] ?? '';
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // El correo no es válido, detenemos el proceso y enviamos error
+        header("Location: index.php?controller=Cliente&action=mostrarFormulario&error=email_invalido");
+        exit();
+        }
     
     // ¡NUEVO CAMPO! Obtener y sanear el RFC
     $rfc = filter_input(INPUT_POST, 'rfc', FILTER_SANITIZE_STRING); 

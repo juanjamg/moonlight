@@ -1,5 +1,4 @@
 .env
-uploads/
 vendor/
 ups3.php
 composer.json

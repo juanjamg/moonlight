@@ -20,24 +20,35 @@
             
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="telefono" class="form-label">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $cliente ? htmlspecialchars($cliente['telefono']) : ''; ?>">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" 
+                class="form-control form-control-neon" 
+                id="telefono" 
+                name="telefono" 
+                value="<?php echo $cliente ? htmlspecialchars($cliente['telefono']) : ''; ?>" 
+                maxlength="10"
+                pattern="[0-9]{10}"
+                title="Ingresa un número de teléfono válido de 10 dígitos"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                required>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $cliente ? htmlspecialchars($cliente['email']) : ''; ?>">
+                    <input type="email" class="form-control form-control-neon" id="email" name="email" value="<?php echo $cliente ? htmlspecialchars($cliente['email']) : ''; ?>" required>
+                    <div id="email-error" class="text-danger mt-2" style="display: none; font-size: 0.85rem; text-shadow: 0 0 5px rgba(255,0,60,0.5);">Formato incorrecto. Incluye un "@" y un dominio válido (ej. .com).</div>
                 </div>
             </div>
+
+            </div>
             <div class="mb-3">
-    <label for="rfc" class="form-label">RFC (Registro Federal de Contribuyentes)</label>
-    <input type="text" class="form-control" id="rfc" name="rfc" 
-           value="<?php echo $cliente ? htmlspecialchars($cliente['rfc']) : ''; ?>" 
-           maxlength="13" placeholder="Ej: ABCD123456XYZ">
-</div>
+                <label for="rfc" class="form-label">RFC (Registro Federal de Contribuyentes)</label>
+                <input type="text" class="form-control" id="rfc" name="rfc" value="<?php echo $cliente ? htmlspecialchars($cliente['rfc']) : ''; ?>" maxlength="13" placeholder="Ej: ABCD123456XYZ">
+            </div>
 
             <button type="submit" class="btn btn-success me-2">💾 Guardar Cliente</button>
             <a href="index.php?controller=Cliente&action=listar" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
+<script src="public/js/validar_email.js"></script>
 </body>
 </html>
