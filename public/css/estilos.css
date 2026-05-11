@@ -288,3 +288,30 @@ body.light-mode .table-dark-custom td { background-color: #ffffff; color: #33333
     color: #fff;
     box-shadow: 0 0 15px #6c757d;
 }
+
+.form-card {
+background: rgba(20, 20, 25, 0.85);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(0, 229, 255, 0.3);
+border-radius: 15px;
+padding: 40px;
+width: 100%;
+max-width: 750px; /* Un poco más ancho para acomodar los precios cómodamente */
+box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+}
+
+/* Estilo personalizado para el Checkbox Neón */
+.form-check-input-neon {
+background-color: rgba(0, 0, 0, 0.6);
+border: 2px solid #8A5BB2;
+cursor: pointer;
+width: 1.2rem;
+height: 1.2rem;
+margin-right: 8px;
+}
+
+.form-check-input-neon:checked {
+background-color: var(--accent-magenta);
+border-color: var(--accent-magenta);
+box-shadow: 0 0 10px var(--accent-magenta);
+}
