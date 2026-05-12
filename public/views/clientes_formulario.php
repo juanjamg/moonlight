@@ -22,13 +22,15 @@
 
                 <div class="mb-4">
                     <label for="nombre" class="form-label">NOMBRE COMPLETO</label>
-                    <input type="text" 
-                           class="form-control form-control-neon" 
-                           id="nombre" 
-                           name="nombre" 
-                           value="<?php echo $cliente ? htmlspecialchars($cliente['nombre']) : ''; ?>" 
-                           placeholder="Ej. Juan Pérez"
-                           required>
+                    <input type="text" class="form-control form-control-neon" 
+                    id="nombre" 
+                    name="nombre" 
+                    value="<?php echo $cliente ? htmlspecialchars($cliente['nombre']) : ''; ?>" 
+                    placeholder="Ej. Juan Pérez"
+                    pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                    title="El nombre solo debe contener letras y espacios"
+                    oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '')"
+                    required>
                 </div>
                 
                 <div class="row">
@@ -74,7 +76,7 @@
                            value="<?php echo $cliente ? htmlspecialchars($cliente['rfc']) : ''; ?>" 
                            maxlength="13" 
                            placeholder="Ej: ABCD123456XYZ"
-                           style="text-transform: uppercase;">
+                           style="text-transform: uppercase;" required>
                 </div>
 
                 <div class="d-flex justify-content-end gap-3">

@@ -6,24 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/estilos.css" rel="stylesheet"> 
     
-    <style>
-        /* Ajuste para que los botones dentro de la tabla sean más pequeños y compactos */
-        .btn-neon-sm {
-            padding: 4px 12px;
-            font-size: 0.85rem;
-            border-radius: 50px;
-        }
-
-        /* Alerta personalizada estilo Neón Informativo (Morado/Cyan) */
-        .alert-neon-info {
-            background-color: rgba(159, 0, 255, 0.05);
-            border: 1px solid var(--accent-purple);
-            color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(159, 0, 255, 0.2);
-            border-radius: 8px;
-            padding: 15px;
-        }
-    </style>
 </head>
 <body>
     <?php require_once 'sidebar.php'; ?>

@@ -7,10 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/estilos.css" rel="stylesheet"> 
     
-    <style>
-        /* Contenedor y tarjeta idénticos a la vista de clientes */
-        
-    </style>
 </head>
 <body>
     <?php require_once 'sidebar.php'; ?>
@@ -35,7 +31,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="codigo_barras" class="form-label">CÓDIGO DE BARRAS</label>
-                            <input type="text" class="form-control form-control-neon" id="codigo_barras" name="codigo_barras" value="<?php echo $producto ? htmlspecialchars($producto['codigo_barras']) : ''; ?>" placeholder="Opcional">
+                            <input type="text" class="form-control form-control-neon" id="codigo_barras" name="codigo_barras" value="<?php echo $producto ? htmlspecialchars($producto['codigo_barras']) : ''; ?>" placeholder="Opcional" required>
                         </div>
                     </div>
 
