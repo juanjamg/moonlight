@@ -26,7 +26,7 @@ class ClienteController {
 
     // Función para mostrar el formulario de creación o edición
     public function mostrarFormulario() {
-        if ($_SESSION['rol'] !== 'Admin') {
+        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }
@@ -46,7 +46,10 @@ class ClienteController {
     // Función que procesa el formulario (Guarda y Actualiza)
     public function guardar() {
     // ... (Control de Acceso) ...
-    
+    if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
+        header('Location: index.php?controller=Dashboard&action=index');
+        exit();
+        }
     // 1. Sanear y obtener los datos
     $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);

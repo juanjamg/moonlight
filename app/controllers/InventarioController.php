@@ -27,7 +27,7 @@ class InventarioController {
     // Muestra el formulario de creación o edición
     public function mostrarFormulario() {
         // [Lógica de Control de Acceso y Carga de Datos]
-        if ($_SESSION['rol'] !== 'Admin') {
+        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }
@@ -53,7 +53,7 @@ class InventarioController {
      * 3. CREAR NUEVO (Si no existe ningún duplicado).
      */
     public function guardar() {
-        if ($_SESSION['rol'] !== 'Admin') {
+        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }
