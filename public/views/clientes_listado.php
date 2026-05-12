@@ -55,7 +55,9 @@
                     <td><span class="badge bg-info"><?php echo htmlspecialchars($c['puntos_acumulados']); ?></span></td>
                     <td>
                         <a href="index.php?controller=Cliente&action=mostrarFormulario&id=<?php echo $c['id_cliente']; ?>" class="btn-neon btn-neon-yellow">Editar</a>
+                        <?php if ($_SESSION['rol'] !== 'Vendedor'): ?>
                         <a href="index.php?controller=Cliente&action=eliminar&id=<?php echo $c['id_cliente']; ?>" class="btn-neon btn-neon-pink" onclick="return confirm('¿Está seguro de eliminar a este cliente?');">Eliminar</a>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <?php 

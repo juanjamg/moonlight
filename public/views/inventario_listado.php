@@ -82,9 +82,11 @@
                                 <a href="index.php?controller=Inventario&action=mostrarFormulario&id=<?php echo $p['id_producto']; ?>" class="btn-neon btn-neon-yellow btn-neon-sm text-decoration-none">
                                     Editar
                                 </a>
+                                <?php if ($_SESSION['rol'] !== 'Vendedor'): ?>
                                 <a href="index.php?controller=Inventario&action=eliminar&id=<?php echo $p['id_producto']; ?>" class="btn-neon btn-neon-red btn-neon-sm text-decoration-none" onclick="return confirm('¿Está seguro de eliminar este producto?');">
                                     Eliminar
                                 </a>
+                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>
