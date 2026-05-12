@@ -26,7 +26,7 @@ class ClienteController {
 
     // Función para mostrar el formulario de creación o edición
     public function mostrarFormulario() {
-        if ($_SESSION['rol'] !== 'Admin' & $_SESSION['rol'] !== 'Vendedor') {
+        if ($_SESSION['rol'] !== 'Admin') {
             header('Location: index.php?controller=Dashboard&action=index');
             exit();
         }
